@@ -69,7 +69,7 @@
 
         <div class="col-50-about">
             <div class="img-about">
-                <img class="img-about" src="/asset/img1.jpg" alt="pizza">
+                <img class="img-about" src="asset/img1.jpg" alt="pizza">
             </div>
         </div>
     </section>
@@ -84,32 +84,32 @@
 
         <div class="content-menu">
             <div class="box-menu">
-                <img src="/asset/menu1.jpg" alt="menu 1">
+                <img src="asset/menu1.jpg" alt="menu 1">
                 <p class="name-menu">Special Salads</p>
             </div>
 
             <div class="box-menu">
-                <img src="/asset/menu2.jpg" alt="menu 2">
+                <img src="asset/menu2.jpg" alt="menu 2">
                 <p class="name-menu">Special Pasta</p>
             </div>
 
             <div class="box-menu">
-                <img src="/asset/menu3.jpg" alt="menu 3">
+                <img src="asset/menu3.jpg" alt="menu 3">
                 <p class="name-menu">Special Salada</p>
             </div>
 
             <div class="box-menu">
-                <img src="/asset/menu4.jpg" alt="menu 4">
+                <img src="asset/menu4.jpg" alt="menu 4">
                 <p class="name-menu">Special Salada</p>
             </div>
 
             <div class="box-menu">
-                <img src="/asset/menu5.jpg" alt="menu 5">
+                <img src="asset/menu5.jpg" alt="menu 5">
                 <p class="name-menu">Special Salada</p>
             </div>
 
             <div class="box-menu">
-                <img src="/asset/menu6.jpg" alt="menu 6">
+                <img src="asset/menu6.jpg" alt="menu 6">
                 <p class="name-menu">Special Salada</p>
             </div>
         </div>
@@ -194,24 +194,24 @@
 
         <div class="content-contact">
             <div class="box-contact">
-                <form action="#" class="form-content">
+                <form action="#" class="form-content" name="submit-google">
                     <legend>Send Message</legend>
 
                     <div class="input-contact">
-                        <input type="text" id="name" placeholder="Name">
+                        <input type="text" id="name" placeholder="Name" name="nama">
                         <div class="error-message"></div>
                     </div>
 
                     <div class="input-contact">
-                        <input type="email" id="email" placeholder="Email">
+                        <input type="email" id="email" placeholder="Email" name="email">
                     </div>
 
                     <div class="input-contact">
-                        <input type="text" id="message" placeholder="Message">
+                        <input type="text" id="message" placeholder="Message" name="message">
                     </div>
 
                     <div class="btn-send">
-                        <input type="submit" value="send">
+                        <input type="submit" value="send" name="submit">
                     </div>
                 </form>
             </div>
@@ -237,6 +237,18 @@
 
     <script src="main.js">
 
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFQ6yfjWIEzc-wtaJ2XMPh0JQAjS1UwjGoncYb3Iv3iLqI9yB3ztJt20fe7DR9gUHg/exec'
+  const form = document.forms['submit-google']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
     </script>
 
 </body>

@@ -291,7 +291,7 @@ section{
     align-items: center;
     min-height: 100vh;
     justify-content: center;
-    background: url(/asset/bg2.jpg);
+    background: url(asset/bg2.jpg);
     background-size: cover;
     background-position: center center;
 }
@@ -370,7 +370,7 @@ section{
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    background: url(/asset/bg3.jpg);
+    background: url(asset/bg3.jpg);
     background-size: cover;
     background-position: center center;
 }
